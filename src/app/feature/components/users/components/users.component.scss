@@ -1,0 +1,21 @@
+.form-group{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+input{
+  width: 20%;
+  margin: 2%;
+}
+
+.fa {
+  display: flex;
+  align-items: center;
+}
+
+input{
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}

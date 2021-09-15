@@ -1,0 +1,65 @@
+
+<main class="publications">
+  <article class="card">
+    <form name="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <main class="form-group">
+        <article class="mb-3">
+          <label for="name" class="form-label">Nombre y Apellido</label>
+          <input  type="text"
+                  formControlName = "name"
+                  class="form-control"
+                  [ngClass]="validationInput('name')">
+        </article>
+
+        <article class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input  type="email"
+                  formControlName = "email"
+                  class="form-control"
+                  [ngClass]="validationInput('email')">
+
+          <footer *ngIf="form.get('email').errors.email" class="invalid-feedback">
+            <p>
+              El Correo debe ser valido
+            </p>
+          </footer>
+        </article>
+
+        <article class="mb-3">
+          <label for="cell" class="form-label">Teléfono</label>
+          <input  type="tel"
+                  formControlName = "cell"
+                  class="form-control"
+                  [ngClass]="validationInput('cell')">
+
+          <footer *ngIf="form.get('cell').hasError('pattern')" class="invalid-feedback">
+            <p>
+              El Número telefonico debe ser valido
+            </p>
+          </footer>
+        </article>
+
+        <article class="mb-3">
+          <label for="publication" class="form-label">Publicación</label>
+          <input  type="email"
+                  formControlName = "publication"
+                  class="form-control"
+                  [ngClass]="validationInput('publication')">
+        </article>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+          <i class="fa fa-floppy-o" aria-hidden="true"></i>
+          Guardar
+        </button>
+      </main>
+    </form>
+  </article>
+
+  <footer class="m-2" *ngIf="messageAlert !==''">
+    <div class="alert alert-success" role="alert">
+      {{messageAlert}}
+    </div>
+  </footer>
+
+</main>
+

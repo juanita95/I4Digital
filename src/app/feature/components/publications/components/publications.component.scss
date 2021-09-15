@@ -1,0 +1,23 @@
+@media screen and (max-width: 600px) {
+  .card{
+    width: 80%;
+    margin-top: 5%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .card{
+    width: 50%;
+    margin-top: 5%;
+  }
+}
+
+main{
+  margin: 2%;
+}
+
+.publications{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

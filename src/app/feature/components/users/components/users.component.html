@@ -1,0 +1,20 @@
+<header>
+  <app-loading class="m-5" *ngIf="loading"></app-loading>
+</header>
+
+<main *ngIf="!loading">
+  <header class="form-group">
+  <input type="text" class="form-control" name="filterName" placeholder="Buscar" [(ngModel)]="filterName">
+  </header>
+  <article *ngIf="filterName">
+    <ul *ngFor="let user of users | filter:filterName">
+      <li>{{user.name}}</li>
+    </ul>
+  </article>
+  <article *ngIf="!filterName">
+    <ul *ngFor="let user of users">
+      <li>{{user.name}}</li>
+    </ul>
+  </article>
+</main>
+
